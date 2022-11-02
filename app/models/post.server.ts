@@ -22,10 +22,17 @@ export async function editPost(
 ) {
   return prisma.post.update({ 
     where: { slug: oldSlug },
-    data: {
-      title: post.title,
-      markdown: post.markdown,
-      slug: post.slug,
-    }
+    data: post
   });
+}
+
+export async function deletePost(
+  slug: string
+) {
+  return prisma.post.delete({
+    where: {
+      slug: slug,
+    },
+  })
+  
 }
