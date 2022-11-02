@@ -17,7 +17,7 @@ export default function PostAdmin() {
   
   return (
     <div className="mx-auto max-w-4xl">
-      <h1 className="my-6 mb-2 border-b-2 text-center text-3xl">
+      <h1 className="my-6 mb-2 pb-4 border-b-2 text-center text-3xl">
         Blog Admin
       </h1>
       <div className="grid grid-cols-4 gap-6">
@@ -26,7 +26,7 @@ export default function PostAdmin() {
             {posts.map((post) => (
               <li key={post.slug}>
                 <Link
-                  to={`/posts/${post.slug}`}
+                  to={post.slug}
                   className="text-blue-600 underline"
                 >
                   {post.title}
